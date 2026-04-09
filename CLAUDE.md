@@ -75,3 +75,31 @@ DATABASE_URL=               # defaults to sqlite:///./policy_watch.db
 | Adding coalition | POST `/coalitions` endpoint, see `backend/main.py` |
 | Contact-rep flow | `frontend/src/components/ContactRep.tsx` |
 | Drafting testimony | `backend/src/drafter.py` |
+
+## Every Session
+
+Read the strategy repo for current priorities before acting:
+
+```bash
+gh api repos/Open-Paws/open-paws-strategy/contents/priorities.md --jq '.content' | base64 -d
+gh api repos/Open-Paws/open-paws-strategy/contents/closed-decisions.md --jq '.content' | base64 -d
+```
+
+## Quality Gates
+
+Run before every PR:
+
+```bash
+pip install "git+https://github.com/Open-Paws/desloppify.git#egg=desloppify[full]"
+desloppify scan --path .
+desloppify next
+```
+
+Minimum passing score: ≥85
+
+Speciesist language scan:
+```bash
+semgrep --config semgrep-no-animal-violence.yaml .
+```
+
+All PRs must pass CI before merge.
