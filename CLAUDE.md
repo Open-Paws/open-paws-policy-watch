@@ -43,6 +43,25 @@ Urgency levels:
 - Data never crosses bounded context boundaries without explicit anti-corruption translation
 - All sensitive investigation data stays in Investigation Operations context; this repo is Public Campaigns context only
 
+## Strategic Context — EU AI Code of Practice
+
+The EU AI Code of Practice was published July 2025 and is now in effect. Enforcement begins August 2026 (voluntary compliance period currently active).
+
+**Key provision:** "Risk to non-human welfare" is explicitly listed as a systemic risk that frontier AI providers must consider. This is the first major regulatory framework to include non-human welfare as a named systemic risk category.
+
+Implications for this repo:
+- Monitor EU AI Act / Code of Practice compliance filings — these are now trackable policy events
+- Lab outreach framing is unblocked: the precedent is set. Outreach to AI labs can cite this as regulatory context, not just ethical aspiration
+- Track voluntary compliance statements from AI providers as a new commitment category alongside corporate welfare commitments
+
+## Strategic Context — AnimalBench and UK AISI
+
+AnimalBench now has six benchmarks: AHB 2.1, SpeciesismBench, MORU, MANTA, TAC, CompassionBench.
+
+AHB, MORU, and TAC are integrated into UK AISI Inspect Evals — the standard framework frontier labs use for safety testing. This is institutional validation: animal welfare evaluation is now routing through the same pipeline as AI safety testing.
+
+When monitoring AI policy developments, treat UK AISI Inspect Evals adoption as a signal of institutional legitimacy. Lab outreach citing these benchmarks has a concrete institutional anchor.
+
 ## Running
 
 ```bash
@@ -75,6 +94,8 @@ DATABASE_URL=               # defaults to sqlite:///./policy_watch.db
 | Adding coalition | POST `/coalitions` endpoint, see `backend/main.py` |
 | Contact-rep flow | `frontend/src/components/ContactRep.tsx` |
 | Drafting testimony | `backend/src/drafter.py` |
+| EU AI Code of Practice monitoring | Add EU AI Act / Code of Practice as a tracked jurisdiction in `backend/src/monitor.py` |
+| Lab outreach support | See `open-paws-strategy/strategy/lab-outreach-plan.md` for named contacts and framing |
 
 ## Every Session
 
