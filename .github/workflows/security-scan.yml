@@ -37,7 +37,8 @@ jobs:
 
       - name: Install open-paws-ai-security
         run: |
-          pip install git+https://github.com/Open-Paws/open-paws-ai-security.git
+          git clone --no-recurse-submodules https://github.com/Open-Paws/open-paws-ai-security.git /tmp/opsec-scanner
+          pip install /tmp/opsec-scanner
 
       - name: Run security scan
         id: scan
